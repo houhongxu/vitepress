@@ -10,6 +10,7 @@ if (process.env.DEBUG) {
   Error.stackTraceLimit = Infinity
 }
 
+// HHX 通过minimist解析命令行参数
 const argv: any = minimist(process.argv.slice(2))
 
 const logVersion = (logger = createLogger()) => {
@@ -24,6 +25,7 @@ if (root) {
   argv.root = root
 }
 
+// HHX 手动控制dev server重启
 let restartPromise: Promise<void> | undefined
 
 if (!command || command === 'dev') {

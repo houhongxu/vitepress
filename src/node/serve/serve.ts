@@ -23,6 +23,7 @@ export interface ServeOptions {
   port?: number
 }
 
+// HHX 起一个polka server
 export async function serve(options: ServeOptions = {}) {
   const port = options.port ?? 4173
   const config = await resolveConfig(options.root, 'serve', 'production')
@@ -37,6 +38,7 @@ export async function serve(options: ServeOptions = {}) {
     res.end()
   }
 
+  // HHX brotli比gzip更小
   const compress = compression({ brotli: true })
   const serve = sirv(config.outDir, {
     etag: true,

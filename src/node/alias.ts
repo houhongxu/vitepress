@@ -12,6 +12,8 @@ export const APP_PATH = join(DIST_CLIENT_PATH, 'app')
 export const SHARED_PATH = join(DIST_CLIENT_PATH, 'shared')
 export const DEFAULT_THEME_PATH = join(DIST_CLIENT_PATH, 'theme-default')
 
+// ? HHX siteData在哪里处理的还没找到
+
 // special virtual file. we can't directly import '/@siteData' because
 // - it's not an actual file so we can't use tsconfig paths to redirect it
 // - TS doesn't allow shimming a module that starts with '/'
@@ -20,6 +22,7 @@ export const SITE_DATA_REQUEST_PATH = '/' + SITE_DATA_ID
 
 const vueRuntimePath = 'vue/dist/vue.runtime.esm-bundler.js'
 
+// HHX 使用别名替换将vitepress等解析，而不是虚拟模块
 export function resolveAliases(
   { root, themeDir }: SiteConfig,
   ssr: boolean

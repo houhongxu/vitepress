@@ -52,6 +52,7 @@ export function defineConfigWithTheme<ThemeConfig>(
   return config
 }
 
+// HHX 解析配置文件
 export async function resolveConfig(
   root: string = process.cwd(),
   command: 'serve' | 'build' = 'serve',
@@ -230,6 +231,7 @@ function isObject(value: unknown): value is Record<string, any> {
   return Object.prototype.toString.call(value) === '[object Object]'
 }
 
+// HHX 解析配置文件为siteData
 export async function resolveSiteData(
   root: string,
   userConfig?: UserConfig,

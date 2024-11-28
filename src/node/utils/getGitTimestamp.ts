@@ -4,6 +4,7 @@ import { basename, dirname } from 'path'
 
 const cache = new Map<string, number>()
 
+// HHX 获取git commit时间戳 即 最后更新时间
 export function getGitTimestamp(file: string) {
   const cached = cache.get(file)
   if (cached) return cached

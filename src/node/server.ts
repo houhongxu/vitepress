@@ -2,6 +2,7 @@ import { createServer as createViteServer, type ServerOptions } from 'vite'
 import { resolveConfig } from './config'
 import { createVitePressPlugin } from './plugin'
 
+// HHX 起一个vite dev server
 export async function createServer(
   root: string = process.cwd(),
   serverOptions: ServerOptions & { base?: string } = {},
